@@ -1,0 +1,10 @@
+export default function handler(req, res) {
+  const code = req.query.code || null;
+
+  if (!code) {
+    return res.status(400).json({ error: "Missing code from Spotify" });
+  }
+
+  // For now just return the code so we can see it's working
+  res.status(200).json({ code });
+}
